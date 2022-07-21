@@ -7,6 +7,8 @@
   width: 20%;
   margin: auto;
   display: inline-block;
+  transform: translateX(150px);
+  opacity: 0.5;
 }
 
 /****************************************
@@ -18,11 +20,13 @@
   width: 200px;
   height: 200px;
   filter: grayscale(100%);
+  transition: 2s;
 
 }
 
 .transition-demo img:hover {
-
+  filter: none;
+  transform: scale(1.25) rotate(360deg);
 }
 
 /****************************************
@@ -34,12 +38,58 @@
   height: 50px;
   width: 500px;
   margin: auto;
-  background-color: palegreen;
+  background-color: lightgreen;
+  /* linear-gradient(rgba(255,0,0,1) 0%, rgba(255,154,0,1) 10%, rgba(208,222,33,1) 20%, rgba(79,220,74,1) 30%, rgba(63,218,216,1) 40%, rgba(47,201,226,1) 50%, rgba(28,127,238,1) 60%, rgba(95,21,242,1) 70%, rgba(186,12,248,1) 80%, rgba(251,7,217,1) 90%, rgba(255,0,0,1) 100%)
+   0 0/100% 200%;*/
+  animation-name: sale-bar;
+  animation-duration: 2s;
+  animation-timing-function: 20s;
+  animation-delay: 5s;
+  animation-iteration-count: 10;
+  /*direction*/ 
+  animation-fill-mode: forwards;
 
 }
 
 @keyframes sale-bar {
-  0% { background-color: lightgreen; width: 450px }
-  75% { background-color: #FF033E; width: 125x }
-  100% { background-color: crimson; width: 10px }
+  /* to {background-position:0 -200%} */
+  0% {
+  background-color: lightgreen;
+  /*linear-gradient(rgba(255,0,0,1) 0%, rgba(255,154,0,1) 10%, rgba(208,222,33,1) 20%, rgba(79,220,74,1) 30%, rgba(63,218,216,1) 40%, rgba(47,201,226,1) 50%, rgba(28,127,238,1) 60%, rgba(95,21,242,1) 70%, rgba(186,12,248,1) 80%, rgba(251,7,217,1) 90%, rgba(255,0,0,1) 100%)
+  0 0/100% 200%;  */
+    width: 450px;
+  }
+  12.5% {
+    background-color: gold;
+    width: 375px;
+  }
+  25% {
+    background-color: salmon;
+    width: 250px;
+  }
+  37.5% {
+    background-color: #FF033E;
+    width: 125px;
+  }
+  50% {
+    background-color: crimson;
+    width: 10px;
+  }
+  62.5% {
+    background-color: #FF033E;
+    width: 125px;
+  }
+  75% {
+    background-color: salmon;
+    width: 250px;
+  }
+  87.5% {
+    background-color: gold;
+    width: 375px;
+  }
+  
+  100% {
+    background-color: lightgreen;
+    width: 450px;
+  }    
 }
